@@ -8,7 +8,7 @@
 
 
   fetch(URL, option)
-  .then(result => result.fetch())
+  .then(result => result.json())
   .then(data => console.log(data)
   )
 
