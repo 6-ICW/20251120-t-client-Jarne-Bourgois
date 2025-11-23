@@ -4,6 +4,9 @@
 
 const kinderen = document.querySelector("#kinderen");
 const geschenkenlijst = document.querySelector("#geschenkenlijst");
+
+// een options object voor een GET is niet nodig.
+// GET is de default 
 const options = {
   method: "GET",
   headers: {
@@ -29,6 +32,9 @@ kinderen.addEventListener("change", (e) => {
     .then((result) => result.json())
     .then((data) => {
       console.log(data);
+      // vanaf hier loopt het fout. 
+      // geschenkId is een Array -- dus je geeft in je link een 
+      // Array mee, wat niet zal lukken.
       fetch(
         "https://o-apiandclient-render.onrender.com/geschenken/" +
           data.geschenkId
